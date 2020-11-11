@@ -1,0 +1,134 @@
+<body style="background-color: rgb(232, 232, 236)"></body>
+<div class="registration-wrapper" fxLayoutAlign="center center">
+  <mat-card class="box">
+    <mat-card-header>
+      <mat-card-title>Регистрация</mat-card-title>
+    </mat-card-header>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmitRegistration()">
+      <mat-card-content>
+        <mat-form-field class="example-full-width">
+          <input
+            formControlName="name"
+            matInput
+            placeholder="Имя"
+            [ngClass]="{
+              invalid: form.get('name').invalid && form.get('name').touched
+            }"
+          />
+        </mat-form-field>
+        <span
+          class="red-text"
+          *ngIf="form.get('name').invalid && form.get('name').touched"
+        >
+          <span class="warning" *ngIf="form.get('name').errors['required']"
+            >Обязательное поле</span
+          >
+        </span>
+        <mat-form-field class="example-full-width">
+          <input
+            formControlName="surname"
+            matInput
+            placeholder="Фамилия"
+            [ngClass]="{
+              invalid:
+                form.get('surname').invalid && form.get('surname').touched
+            }"
+          />
+        </mat-form-field>
+        <span
+          class="red-text"
+          *ngIf="form.get('surname').invalid && form.get('surname').touched"
+        >
+          <span class="warning" *ngIf="form.get('surname').errors['required']"
+            >Обязательное поле</span
+          >
+        </span>
+        <mat-form-field class="example-full-width">
+          <input
+            formControlName="login"
+            matInput
+            placeholder="Логин"
+            [ngClass]="{
+              invalid: form.get('login').invalid && form.get('login').touched
+            }"
+          />
+        </mat-form-field>
+        <span
+          class="red-text"
+          *ngIf="form.get('login').invalid && form.get('login').touched"
+        >
+          <span class="warning" *ngIf="form.get('login').errors['required']"
+            >Обязательное поле</span
+          >
+        </span>
+        <mat-form-field class="example-full-width">
+          <input
+            formControlName="password"
+            matInput
+            placeholder="Пароль"
+            [ngClass]="{
+              invalid:
+                form.get('password').invalid && form.get('password').touched
+            }"
+          />
+        </mat-form-field>
+        <span
+          class="red-text"
+          *ngIf="form.get('password').invalid && form.get('password').touched"
+        >
+          <span class="warning" *ngIf="form.get('password').errors['required']"
+            >Обязательное поле</span
+          >
+        </span>
+        <mat-form-field class="example-full-width">
+          <input
+            formControlName="email"
+            matInput
+            placeholder="E-mail"
+            [ngClass]="{
+              invalid: form.get('email').invalid && form.get('email').touched
+            }"
+          />
+        </mat-form-field>
+        <span
+          class="red-text"
+          *ngIf="form.get('email').invalid && form.get('email').touched"
+        >
+          <span class="warning" *ngIf="form.get('email').errors['required']"
+            >Обязательное поле</span
+          >
+          <span class="warning" *ngIf="form.get('email').errors['email']"
+            >Неверные данные email</span
+          >
+        </span>
+        <mat-form-field class="example-full-width">
+          <input
+            formControlName="phone"
+            matInput
+            placeholder="Телефон"
+            [ngClass]="{
+              invalid: form.get('phone').invalid && form.get('phone').touched
+            }"
+          />
+        </mat-form-field>
+        <span
+          class="red-text"
+          *ngIf="form.get('phone').invalid && form.get('phone').touched"
+        >
+          <span class="warning" *ngIf="form.get('phone').errors['required']"
+            >Обязательное поле</span
+          >
+        </span>
+        <mat-form-field class="example-full-width">
+          <input
+            formControlName="additional"
+            matInput
+            placeholder="Примечание"
+          />
+        </mat-form-field>
+      </mat-card-content>
+      <button mat-stroked-button [disabled]="form.invalid" class="btn-block">Регистрация</button>
+    </form>
+  </mat-card>
+</div>

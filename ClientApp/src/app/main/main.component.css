@@ -1,0 +1,28 @@
+  mat-sidenav-container{
+    height: 100%;
+  }
+  mat-sidenav{
+    background-color: rgb(227, 227, 233) !important;
+    width: 300px;
+  }
+  mat-sidenav-content{
+    background-color: rgb(219, 214, 214);
+  }
+  .addmenu{
+    padding: 5px;
+    color: black;
+  }
+  .newmenu{
+    padding: 5px;
+    color: black;
+  }
+  h1,p{
+    color: black;
+  }
+  .itemmenu{
+    color: black;
+    list-style: none;
+    font-size: large;
+    font-weight: 400;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+  }

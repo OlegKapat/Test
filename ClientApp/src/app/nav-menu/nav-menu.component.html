@@ -1,0 +1,57 @@
+<header>
+  <nav
+    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"
+  >
+    <div class="container">
+      <div class="logo mr-auto">
+        <h1>
+          <a href="index.html">SERP <i class="soft">soft4us</i></a>
+        </h1>
+      </div>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-label="Toggle navigation"
+        [attr.aria-expanded]="isExpanded"
+        (click)="toggle()"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse"
+        [ngClass]="{ show: isExpanded }"
+      >
+        <ul class="navbar-nav flex-grow">
+          <li
+            class="nav-item"
+            [routerLinkActive]="['link-active']"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <a class="nav-link text-dark" [routerLink]="['/']">Главная</a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link text-dark"
+              [routerLink]="['/login']"
+              [routerLinkActive]="['link-active']"
+              >Логин</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link text-dark"
+              (click)="logOut()"
+              [routerLink]="['']"
+              [routerLinkActive]="['link-active']"
+              ><mat-icon aria-hidden="false" aria-label="Example home icon"
+                >exit_to_app</mat-icon
+              ></a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
